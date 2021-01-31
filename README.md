@@ -52,5 +52,3 @@ $ python3 infer.py --img_path='2.jpg' --model_path='model.pt'
 
 - If __neither__ is detected in the image, provide output that indicates an error.
 
-
-
