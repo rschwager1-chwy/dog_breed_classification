@@ -31,6 +31,13 @@ This project was forked for use in the internal Chewy Hackathon called Innovatio
 - There is a logic error when neither a human nor a dog is detected as confident.  That got commented out.
 - For Chewy employees, you can read more about this project at: https://chewyinc.atlassian.net/wiki/spaces/ME/pages/1406534670/Breed+Detector
 
+To run as an API, run these commands from the project directory:
+```
+export FLASK_APP=infer
+flask run
+```
+This will setup a server at http://localhost:5000/.  You can test by hitting that url and you should get an "OK" response.
+  
 ## About data set
 The dog breed dataset consists of 133 different breeds
 - [Data](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip)
