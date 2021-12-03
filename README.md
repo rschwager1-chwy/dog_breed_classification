@@ -6,7 +6,8 @@ This project was forked for use in the internal Chewy Hackathon called Innovatio
 - Added flask to the infer script to turn this code into a simple api (/classify?image=<image-url>).  An example: https://rschwager.pythonanywhere.com/classify?image=https://random.dog/5540b113-87af-4280-b998-d12a13d6b5ec.jpg.  Note: This url will work through March 2022.
 - Modified the script to take image urls as well as file paths.
 - Changed the output of the infer script/API to JSON.  Boosted the confidence number by 10x in the response.  Example:
-```{
+```
+{
   "breedsClassified": [
     {
       "breed": "Bullmastiff",
