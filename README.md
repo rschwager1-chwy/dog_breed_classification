@@ -1,6 +1,35 @@
 # Dog Breed Prediction 
 [![Accuracy](https://img.shields.io/badge/accuracy-86%2E12%25-green.svg)](https://github.com/DucLeTrong/dog_breed_classification)
 
+## Chewy Updates/Notes
+This project was forked for use in the internal Chewy Hackathon called Innovation Week held in December 2021.  It was leveraged as part of the breeds pages on https://be.chewy.com as new functionality to detect a breed by uploading a picture.  The following changes were made.  These changes were done quick and dirty as part of getting a working demo up and running.
+- Added flask to the infer script to turn this code into a simple api (/classify?image=<image-url>).  An example: https://rschwager.pythonanywhere.com/classify?image=https://random.dog/5540b113-87af-4280-b998-d12a13d6b5ec.jpg.  Note: This url will work through March 2022.
+- Modified the script to take image urls as well as file paths.
+- Changed the output of the infer script/API to JSON.  Boosted the confidence number by 10x in the response.  Example:
+```{
+  "breedsClassified": [
+    {
+      "breed": "Bullmastiff",
+      "confidence": "0.36959701776504517"
+    },
+    {
+      "breed": "Boxer",
+      "confidence": "0.31436026096343994"
+    },
+    {
+      "breed": "Dogue_de_bordeaux",
+      "confidence": "0.31120267510414124"
+    }
+  ],
+  "humanDetected": false,
+  "dogDetected": true
+}
+```
+- Included the model as part of the repository.
+- Removed the version requirements from requirements.txt.
+- There is a logic error when neither a human nor a dog is detected as confident.  That got commented out.
+- For Chewy employees, you can read more about this project at: https://chewyinc.atlassian.net/wiki/spaces/ME/pages/1406534670/Breed+Detector
+
 ## About data set
 The dog breed dataset consists of 133 different breeds
 - [Data](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip)
